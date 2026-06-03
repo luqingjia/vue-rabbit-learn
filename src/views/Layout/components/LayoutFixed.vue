@@ -3,6 +3,7 @@ import { useScroll } from "@vueuse/core";
 const { y } = useScroll(window);
 import { onMounted } from "vue";
 import { useCategoryStore } from "@/stores/category";
+
 const categoryStore = useCategoryStore();
 
 onMounted(() => {

@@ -1,4 +1,17 @@
 <template>
-  home页面
-  <div style="height: 2000px"></div>
+  <div class="container">
+    <HomeCategory />
+    <HomeBanner />
+  </div>
+  <HomeNew />
+  <HomeHot />
+  <HomeProduct />
 </template>
+
+<script setup lang="ts">
+import HomeProduct from "./components/HomeProduct.vue";
+import HomeNew from "./components/HomeNew.vue";
+import HomeBanner from "./components/HomeBanner.vue";
+import HomeCategory from "./components/HomeCategory.vue";
+import HomeHot from "./components/HomeHot.vue";
+</script>
