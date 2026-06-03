@@ -20,4 +20,11 @@ export default defineConfigWithVueTs(
   vueTsConfigs.recommended,
 
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
+
+  {
+    files: ['src/views/**/index.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 )
