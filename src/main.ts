@@ -1,28 +1,18 @@
 import "./assets/main.css";
 
-import { useIntersectionObserver } from "@vueuse/core";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import "@/styles/common.scss";
 
+//引入懒加载插件并且注册
+import { lazyPlugin } from "@/directives/index";
+
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
+app.use(lazyPlugin);
 
-app.directive("image-lazy", {
-  mounted(el, binding) {
-    console.log(el, binding);
-    const { stop } = useIntersectionObserver(el, ([{ isIntersecting }]) => {
-      console.log(isIntersecting);
-      if (isIntersecting) {
-        // 进入视口区域
-        el.src = binding.value;
-        stop();
-      }
-    });
-  },
-});
 app.mount("#app");
