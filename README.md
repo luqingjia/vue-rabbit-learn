@@ -1,5 +1,5 @@
 # vue-rabbit
-
+学习黑马的前端项目，使用ts构建
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
